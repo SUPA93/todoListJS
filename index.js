@@ -13,8 +13,10 @@ function getTodos(){
         list.innerHTML = `<li>Cliquez sur un Todo pour le supprimer</li>`
     }
 }
+//Two ways to call function getTodos()
+window.addEventListener('load', getTodos);
+//getTodos();
 
-getTodos();
 // add element
 form.addEventListener("submit", (e)=>{
     e.preventDefault();
