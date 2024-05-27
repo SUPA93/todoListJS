@@ -9,14 +9,84 @@
         />
         <title>WA TO DO</title>
         <link rel="stylesheet" href="style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        />
     </head>
     <body>
         <div class="container">
             <h1>TO DO LIST</h1>
             <form action="">
-                <input type="text" id="item" placeholder="À faire" autocomplete="off" minlength="2">    
+                <input
+                    type="text"
+                    id="item"
+                    placeholder="À faire"
+                    autocomplete="off"
+                    minlength="2"
+                />
             </form>
+
+            <img
+                src="share.png"
+                id="share-icon"
+                class="share-icon"
+                alt="icone de partage de la todo list"
+                title="Partager"
+            />
             <ul id="list"></ul>
+            <div id="share-dialog" class="share-dialog">
+                <div class="share-content">
+                    <h2>Partager votre To-Do List</h2>
+                    <div class="share-icons">
+                        <a
+                            id="share-whatsapp"
+                            class="share-link"
+                            href="#"
+                            target="_blank"
+                            ><i class="fab fa-whatsapp"></i
+                        ></a>
+                        <a
+                            id="share-email"
+                            class="share-link"
+                            href="#"
+                            target="_blank"
+                            ><i class="fas fa-envelope"></i
+                        ></a>
+                        <a
+                            id="share-sms"
+                            class="share-link"
+                            href="#"
+                            target="_blank"
+                            ><i class="fas fa-sms"></i
+                        ></a>
+                        <a
+                            id="share-twitter"
+                            class="share-link"
+                            href="#"
+                            target="_blank"
+                            ><i class="fab fa-twitter"></i
+                        ></a>
+                        <a
+                            id="share-facebook"
+                            class="share-link"
+                            href="#"
+                            target="_blank"
+                            ><i class="fab fa-facebook"></i
+                        ></a>
+                    </div>
+                    <div class="share-link-container">
+                        <label for="share-link">Lien vers la liste</label>
+                        <input type="text" id="share-link" readonly />
+                        <button id="copy-link" class="share-button">
+                            Copier
+                        </button>
+                    </div>
+                    <button id="cancel-share" class="share-button">
+                        Annuler
+                    </button>
+                </div>
+            </div>
         </div>
         <script src="index.js"></script>
     </body>
