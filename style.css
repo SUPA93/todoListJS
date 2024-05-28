@@ -136,7 +136,7 @@ li.checked:hover:after {
   /* transition: 0.5s; */
 }
 
-/* Media queries for responsiveness */
+/* Media queries for responsive */
 @media (max-width: 768px) {
   h1 {
     font-size: 1.8rem;
@@ -167,15 +167,32 @@ li.checked:hover:after {
     font-size: 0.9rem;
   }
 }
-/* SHARE SECTION */
 
-.share-icon {
-  display: none;
+/* SHARE SECTION */
+.share-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 20px auto;
+  border: 2px solid blue;
+  width: 10rem;
+  background: rgba(9, 211, 9, 0.486);
+  border-radius: 5px;
+  box-shadow:0px 2px 5px 2px #7cc7da;
+  padding: 3px;
+}
+
+.share-container img {
   width: 1.5rem;
   height: auto;
-  margin: auto;
-  cursor: pointer;
-  color: #ffffff;
+  margin-left: 10px;
+}
+
+.share-container span {
+  font-size: 1.2rem;
+  color: #333;
+  
 }
 .share-icons {
   display: flex;
@@ -229,7 +246,7 @@ li.checked:hover:after {
 }
 
 .share-dialog {
-  display: none; /* Assurez-vous que la boîte de dialogue est cachée par défaut */
+  display: none; 
   position: fixed;
   top: 0;
   left: 0;

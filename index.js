@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const form = document.querySelector('form');
 const item = document.getElementById('item');
-const shareIcon = document.getElementById('share-icon');
+const shareContainer = document.getElementById('share-container');
 const shareDialog = document.getElementById('share-dialog');
 const shareWhatsapp = document.getElementById('share-whatsapp');
 const shareEmail = document.getElementById('share-email');
@@ -63,7 +63,7 @@ function addDate() {
 window.addEventListener('load', getTodos);
 //getTodos();
 
-// Fonction pour capitaliser la première lettre de la chaîne
+// Capitalize first TODO'S letter function
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
@@ -92,14 +92,14 @@ list.addEventListener("click", (e) => {
 function toggleShareIcon() {
     const items = list.getElementsByTagName('li');
     if (items.length > 1) {
-        shareIcon.style.display = 'block';
+        shareContainer.style.display = 'block';
     } else {
-        shareIcon.style.display = 'none';
+        shareContainer.style.display = 'none';
     }
 }
 
 // Show share dialog
-shareIcon.addEventListener('click', () => {
+shareContainer.addEventListener('click', () => {
     const items = list.getElementsByTagName('li');
     let listContent = '';
     let listIndex = 0;
@@ -109,11 +109,13 @@ shareIcon.addEventListener('click', () => {
     }
 
     const encodedListContent = encodeURIComponent(listContent);
+    shareLink.value = listContent;
 
     shareWhatsapp.href = `https://wa.me/?text=${encodedListContent}`;
     shareEmail.href = `mailto:?subject=Ma%20TO%20DO%20LIST&body=${encodedListContent}`;
     shareSms.href = `sms:?body=${encodedListContent}`;
-
+    
+    //style for share dialog box
     shareDialog.style.display = 'flex';
 });
 
