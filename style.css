@@ -175,14 +175,16 @@ li.checked:hover:after {
   justify-content: center;
   cursor: pointer;
   margin: 20px auto;
-  border: 2px solid blue;
+  border: 2px solid rgba(124, 124, 124, 0.726);
   width: 10rem;
   background: rgba(9, 211, 9, 0.486);
   border-radius: 5px;
-  box-shadow:0px 2px 5px 2px #7cc7da;
+  box-shadow:0px 2px 5px 5px #7cc7da;
   padding: 3px;
 }
-
+.share-container:hover{
+  transform: translateX(2px);
+}
 .share-container img {
   width: 1.5rem;
   height: auto;
