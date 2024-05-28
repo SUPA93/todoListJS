@@ -187,12 +187,12 @@ li.checked:hover:after {
   width: 1.5rem;
   height: auto;
   margin-left: 10px;
+  vertical-align: middle;
 }
 
 .share-container span {
   font-size: 1.2rem;
   color: #333;
-  
 }
 .share-icons {
   display: flex;
