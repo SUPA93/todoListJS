@@ -67,22 +67,27 @@ window.addEventListener('load', getTodos);
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
+
 // Add element
 form.addEventListener("submit", (e) => {
     e.preventDefault();
     let formattedDate = addDate();
     let capitalizedItem = capitalizeFirstLetter(item.value); // Capitaliser la première lettre
-    list.innerHTML += `<li>${capitalizedItem} -Ajouté le ${formattedDate}</li>`;
+    list.innerHTML += `<li>${capitalizedItem} - Ajouté le ${formattedDate} <i class="fas fa-redo refresh-icon" style="display: none;"></i></li>`;
     item.value = "";
     storeList();
     toggleShareIcon();
 });
 
 list.addEventListener("click", (e) => {
-    if (e.target.classList.contains("checked")) {
+    if (e.target.classList.contains("refresh-icon")) {
+        e.target.parentElement.classList.remove("checked");
+        e.target.style.display = 'none';
+    } else if (e.target.classList.contains("checked")) {
         e.target.remove();
     } else {
         e.target.classList.add("checked");
+        e.target.querySelector('.refresh-icon').style.display = 'inline';
     }
     storeList();
     toggleShareIcon();
@@ -114,6 +119,8 @@ shareContainer.addEventListener('click', () => {
     shareWhatsapp.href = `https://wa.me/?text=${encodedListContent}`;
     shareEmail.href = `mailto:?subject=Ma%20TO%20DO%20LIST&body=${encodedListContent}`;
     shareSms.href = `sms:?body=${encodedListContent}`;
+    shareTwitter.href = `https://twitter.com/intent/tweet?text=${encodedListContent}`;
+    shareFacebook.href = `https://www.facebook.com/sharer/sharer.php?u=${encodedListContent}`;
     
     //style for share dialog box
     shareDialog.style.display = 'flex';
