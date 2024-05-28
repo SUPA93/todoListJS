@@ -20,11 +20,15 @@ body {
   margin: 0 auto;
   text-align: center;
   background: linear-gradient(125deg, #5effc9 0%, #45c2fc 100%);
-  padding: 2rem 1rem;
+  padding: 1rem 1rem;
   border-radius: 35px;
   box-shadow: 5px 10px 10px 0px #a676acd5, -5px 10px 20px 0px #cf9039d0;
 }
-
+#shoutout{
+  margin-left: 70%;
+  justify-content: end;
+  color: #bf8fdb;
+}
 h1 {
   text-transform: uppercase;
   letter-spacing: 0.4rem;
@@ -71,7 +75,6 @@ form input:focus {
 
 ul {
   text-align: left;
-  border: 1px solid red;
 }
 
 ul li {
@@ -80,6 +83,7 @@ ul li {
   position: relative;
   font-size: 1.2rem;
   cursor: pointer;
+  text-shadow: 0px 2px 0px 5px #ffffff;
 }
 
 ul li:before {
@@ -107,6 +111,7 @@ li.checked:before {
   padding: 10px 10px;
   font-size: 1.1rem;
   color: #529452;
+  
 }
 
 li.checked:hover:after {
@@ -114,13 +119,7 @@ li.checked:hover:after {
   font-size: 1.1rem;
   color: #fd4a1d;
   opacity: 0;
-}
-ul li {
-  list-style: none;
-  padding: 0.7rem;
-  position: relative;
-  font-size: 1.2rem;
-  cursor: pointer;
+  
 }
 
 ul li .refresh-icon {
@@ -155,7 +154,7 @@ ul li.checked .refresh-icon {
   50% {
     opacity: 1;
     transform: translateY(25px);
-    scale: 1.1c;
+    scale: 1.1;
   }
 }
 
